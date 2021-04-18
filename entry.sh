@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing Risk of Rain 2 server..."
-"${STEAMCMDDIR}/steamcmd.sh" +login anonymous +force_install_dir "${STEAMAPPDIR}" +@sSteamCmdForcePlatformType windows +app_update "${STEAMAPPID}" +quit
+HTTP_PROXY="${STEAMCMD_HTTP_PROXY}" "${STEAMCMDDIR}/steamcmd.sh" +login anonymous +force_install_dir "${STEAMAPPDIR}" +@sSteamCmdForcePlatformType windows +app_update "${STEAMAPPID}" +quit
 
 echo "Generating server configuration..."
 envsubst < "default_config.cfg" > "${STEAMAPPDIR}/Risk of Rain 2_Data/Config/server.cfg"

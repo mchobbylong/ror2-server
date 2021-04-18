@@ -1,5 +1,5 @@
 <h1> <img src="https://i.imgur.com/UIQSMEs.png" height=45> Risk of Rain 2 dockerized server </h1>
- 
+
 [![Docker Pulls](https://img.shields.io/docker/pulls/avivace/ror2server?style=flat-square)](https://hub.docker.com/r/avivace/ror2server)
 
 Host your Risk of Rain 2 dedicated server anywhere using Docker. Powered by Wine and the X virtual framebuffer to seamlessy run on Linux machines.
@@ -25,7 +25,7 @@ connect "<SERVER_IP>:27015";
 
 Replace `SERVER_IP` with the public IP of the server running the Docker Image.
 
-By default, the server has no password and runs on UDP port 27015. 
+By default, the server has no password and runs on UDP port 27015.
 
 ## Customize configuration
 
@@ -103,6 +103,15 @@ Could not load config /Config/server_pregame.cfg: Could not find file "Z:\home\s
 
 Be aware that these kind of warning messages are non blocking, they are just warnings and the server initialization will proceed as normal.
 
+### Server is stuck at installing RoR2 dedicated server
+
+This could be due to poor connectivity from your VPS to Steam content network.
+
+Try passing the following environmental variable to let SteamCMD use your own proxy:
+
+```
+STEAMCMD_HTTP_PROXY: http://your-proxy-ip:port
+```
 
 ### Acknowledgements
 
